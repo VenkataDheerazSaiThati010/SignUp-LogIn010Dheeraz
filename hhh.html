@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+    form{
+      margin-top:0px;
+      
+      margin-left:860px;
+      border:2px solid black;
+      width:500px;
+      padding-top:20px;
+      padding-bottom:20px;
+      border-radius:50px;
+      position:absolute;
+      top:10px;
+      right:10px;
+    }
+    form{
+      background-image:url("730031.jpg");
+      opacity:0.7;
+      
+      background-position-x:10px;
+      background-position-y:-40px;
+    }
+    body{
+      background-image:url("devul2.jpg");
+      background-repeat:no-repeat;
+      background-size:cover;
+      
+    
+    }
+    form label,input{
+      color:rgb(247, 6, 6);
+      font-weight:bold;
+     
+    }
+    </style>
+  </head>
+  <body>
+    <p style="font-size:30px;color:whitesmoke;">Welcome to my House</p>
+    <p style="color:white;width:300px;">A list of some of the best lesser-known horror podcasts that should not be overlooked, featuring stories from different genres, authors, and formats.Horror fiction is the most popular type of audio drama podcast and drives much of the growth and interest in the medium. Horror Fiction podcasting continues to grow rapidly attracting mainstream success with some shows reaching very large audiences.</p>
+    <form onsubmit="validation()">
+     <center> <label style="padding-left:px;">Username :</label>
+      <input  id="user" type="text"></center>
+      <br><br>
+
+      <center><label >First Name :</label>
+      <input   id="first" type="text"></center>
+      <br><br>
+
+      <center><label >Last Name :</label>
+      <input id="last" type="text"></center>
+      <br><br>
+
+      <center><label style="padding-left:5px;">Password :</label>
+      <input id="pswd" type="password"></center>
+      <br><br>
+
+      <label style="padding-left:70px;">Confirm Password :</label>
+      <input id="cpswd"type="password">
+      <br><br>
+
+      <center><input id="sub" type="submit"></center>
+    </form>
+    <form style="margin-top:400px;"onsubmit="login()">
+     <center><p style="color:aqua;">LOG IN</p></center>
+      <br><br>
+      <center><label >Username :</label>
+      <input id="lu" type="text"></center>
+      <br><br>
+      <center><label>Password</label>
+      <input id="lp" type="password"></center>
+      <br><br>
+      <center><input type="submit"></center>
+    </form>
+
+    <script>
+      function validation(){
+        let a1=document.getElementById("user").value
+        let b1=document.getElementById("first").value
+        let c1=document.getElementById("last").value
+        let d1=document.getElementById("pswd").value
+        let e1=document.getElementById("cpswd").value
+
+        if(a1.length<5){
+          alert("No of Characters must be More than 5")
+        }
+        else if(d1!=e1){
+          alert("Re-Cheeck Password")
+        }
+        else{
+          alert("success Sign-Up")
+          localStorage.setItem("username",a1)
+          localStorage.setItem("Full name",b1+c1)
+          localStorage.setItem("passwprd",d1)
+        }
+      }
+
+      function login(){
+        let logu=document.getElementById("lu").value
+        let logp=document.getElementById("lp").value
+
+        let a=localStorage.getItem("username")
+        let b=localStorage.getItem("passwprd")
+
+        if(logu==a && logp==b)
+        {
+         
+        alert("SuccessFul Login")
+        }
+        else{
+          alert('once check again')
+        }
+      }
+    </script>
+
+  </body>
+</html>
